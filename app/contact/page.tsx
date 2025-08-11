@@ -1,14 +1,71 @@
-"use client"
+"use client";
 
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import { useState } from "react";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("");
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.from("messages").insert([
+        {
+          first_name: formData.first_name,
+          last_name: formData.last_name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+      ]);
+
+      if (error) {
+        setStatus(`❌ Error: ${error.message}`);
+      } else {
+        setStatus("✅ Message sent successfully!");
+        setFormData({
+          first_name: "",
+          last_name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (err) {
+      setStatus(`❌ Unexpected error: ${err.message || err}`);
+    }
+    setLoading(false);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -18,7 +75,9 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Contact{" "}
-            <span className="bg-gradient-to-r from-teal-600 to-coral-500 bg-clip-text text-transparent">Us</span>
+            <span className="bg-gradient-to-r from-teal-600 to-coral-500 bg-clip-text text-transparent">
+              Us
+            </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to start your next project? Get in touch with our team today
@@ -33,47 +92,105 @@ export default function ContactPage() {
             {/* Contact Form */}
             <Card className="bg-white border-gray-200 shadow-xl">
               <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-                <form className="space-y-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  Send us a Message
+                </h2>
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                      <Input className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500" />
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        First Name
+                      </label>
+                      <Input
+                        name="first_name"
+                        value={formData.first_name}
+                        onChange={handleChange}
+                        className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500"
+                        required
+                      />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                      <Input className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500" />
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Last Name
+                      </label>
+                      <Input
+                        name="last_name"
+                        value={formData.last_name}
+                        onChange={handleChange}
+                        className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500"
+                        required
+                      />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Email
+                    </label>
                     <Input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500"
+                      required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone
+                    </label>
                     <Input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                    <Input className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500" />
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Subject
+                    </label>
+                    <Input
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500"
+                      required
+                    />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Message
+                    </label>
                     <Textarea
                       rows={5}
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500"
+                      required
                     />
                   </div>
-                  <Button className="w-full bg-gradient-to-r from-teal-600 to-coral-500 hover:from-teal-700 hover:to-coral-600 text-white shadow-lg">
-                    Send Message
+                  <Button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-teal-600 to-coral-500 hover:from-teal-700 hover:to-coral-600 text-white shadow-lg"
+                    disabled={loading}
+                  >
+                    {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
+                {status && (
+                  <p
+                    className={`mt-4 text-center ${
+                      status.startsWith("✅")
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    {status}
+                  </p>
+                )}
               </CardContent>
             </Card>
 
@@ -90,7 +207,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                      <p className="text-gray-600 hover:text-teal-600 transition-colors">info@sparklesmartec.com</p>
+                      <p className="text-gray-600 hover:text-teal-600 transition-colors">
+                        info@sparklesmartec.com
+                      </p>
                     </div>
                   </a>
                 </CardContent>
@@ -104,7 +223,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                      <p className="text-gray-600 hover:text-red-600 transition-colors">+266-63651639</p>
+                      <p className="text-gray-600 hover:text-red-600 transition-colors">
+                        +266-63651639
+                      </p>
                     </div>
                   </a>
                 </CardContent>
@@ -152,5 +273,5 @@ export default function ContactPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
