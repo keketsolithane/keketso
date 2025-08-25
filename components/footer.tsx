@@ -16,7 +16,7 @@ export function Footer() {
               <div className="bg-white p-2 rounded-lg shadow-md">
                 <Logo className="w-8 h-8" />
               </div>
-              <span className="text-xl font-bold text-white">SparkleSmart</span>
+              <span className="text-xl font-bold text-white">JKL Technologies</span>
             </div>
             <p className="text-gray-300 leading-relaxed font-medium">
               Delivering user-centric digital solutions that enrich lives, expand opportunities, and empower
@@ -93,14 +93,14 @@ export function Footer() {
                 className="flex items-center space-x-3 hover:text-white transition-colors group"
               >
                 <Mail className="w-5 h-5 text-red-400 group-hover:text-teal-400 transition-colors" />
-                <span className="text-gray-300 font-medium group-hover:text-white">info@sparklesmartec.com</span>
+                <span className="text-gray-300 font-medium group-hover:text-white">info@jkltechno.com</span>
               </a>
               <a
-                href="tel:+26663651639"
+                href="tel:+26656864062/62623825"
                 className="flex items-center space-x-3 hover:text-white transition-colors group"
               >
                 <Phone className="w-5 h-5 text-red-400 group-hover:text-teal-400 transition-colors" />
-                <span className="text-gray-300 font-medium group-hover:text-white">+266-63651639</span>
+                <span className="text-gray-300 font-medium group-hover:text-white">+266-56864062/62623825</span>
               </a>
               <a
                 href="https://www.google.com/maps/search/Transformation+Resource+Center+Maseru+Lesotho"
@@ -110,7 +110,7 @@ export function Footer() {
               >
                 <MapPin className="w-5 h-5 text-red-400 group-hover:text-teal-400 transition-colors" />
                 <span className="text-gray-300 font-medium group-hover:text-white">
-                  Transformation Resource Center(TRC)
+                  Hatsolo(By-Pass)
                 </span>
               </a>
             </div>
@@ -118,7 +118,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
-          <p className="text-gray-300 font-medium">© 2025 SparkleSmart Technologies. All rights reserved.</p>
+          <p className="text-gray-300 font-medium">© 2025 JKL Technologies. All rights reserved.</p>
         </div>
       </div>
     </footer>

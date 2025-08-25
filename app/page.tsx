@@ -31,13 +31,12 @@ export default function HomePage() {
               <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
                 Welcome To{" "}
                 <span className="bg-gradient-to-r from-teal-600 via-red-500 to-teal-600 bg-clip-text text-transparent animate-gradient-shift">
-                  SparkleSmart
-                </span>{" "}
-                Technologies
+                  JKL Technologies
+                </span>
               </h1>
 
               <p className="text-xl text-gray-700 leading-relaxed max-w-2xl font-medium">
-                SparkleSmart Technologies is dedicated to collaborating with inspired partners and clients to deliver
+                JKL Technologies is dedicated to collaborating with inspired partners and clients to deliver
                 user-centric digital solutions that enrich lives, expand opportunities, and empower organizations to
                 drive sustainable development impact.
               </p>
@@ -66,7 +65,7 @@ export default function HomePage() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200 accent-gradient rounded-lg p-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">500+</div>
+                <div className="text-3xl font-bold text-gray-900">100+</div>
                 <div className="text-gray-600 font-medium">Projects</div>
               </div>
               <div className="text-center">
@@ -74,7 +73,7 @@ export default function HomePage() {
                 <div className="text-gray-600 font-medium">Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">5+</div>
+                <div className="text-3xl font-bold text-gray-900">2+</div>
                 <div className="text-gray-600 font-medium">Years</div>
               </div>
             </div>
@@ -173,7 +172,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose SparkleSmart Section */}
+      {/* Why Choose JKLTechno Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -185,7 +184,7 @@ export default function HomePage() {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Why Choose{" "}
               <span className="bg-gradient-to-r from-teal-600 to-red-500 bg-clip-text text-transparent">
-                SparkleSmart
+                JKL TECHNOLOGIES
               </span>
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">

@@ -6,7 +6,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SparkleSmart Technologies - Digital Innovation Leaders",
+  title: "JKLlt Technologies - Digital Innovation Leaders",
   description:
     "Delivering user-centric digital solutions that enrich lives, expand opportunities, and empower organizations.",
     generator: 'v0.dev'

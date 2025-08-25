@@ -10,11 +10,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
 export default function ContactPage() {
+  // Supabase client initialization moved inside the component
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -199,7 +200,7 @@ export default function ContactPage() {
               <Card className="bg-white border-gray-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg cursor-pointer">
                 <CardContent className="p-6">
                   <a
-                    href="mailto:info@sparklesmartec.com?subject=Inquiry from Website&body=Hello SparkleSmart Technologies,%0D%0A%0D%0AI would like to inquire about your services.%0D%0A%0D%0AThank you."
+                    href="mailto:info@jkltechno.com?subject=Inquiry from Website&body=Hello SparkleSmart Technologies,%0D%0A%0D%0AI would like to inquire about your services.%0D%0A%0D%0AThank you."
                     className="flex items-center space-x-4 w-full"
                   >
                     <div className="w-12 h-12 bg-gradient-to-r from-teal-600 to-red-500 rounded-full flex items-center justify-center shadow-lg">
@@ -208,7 +209,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900">Email</h3>
                       <p className="text-gray-600 hover:text-teal-600 transition-colors">
-                        info@sparklesmartec.com
+                        info@jkltechno.com
                       </p>
                     </div>
                   </a>
@@ -217,14 +218,14 @@ export default function ContactPage() {
 
               <Card className="bg-white border-gray-200 hover:border-red-300 transition-all duration-300 hover:shadow-lg cursor-pointer">
                 <CardContent className="p-6">
-                  <a href="tel:+26663651639" className="flex items-center space-x-4 w-full">
+                  <a href="tel:+26656864062/62623825" className="flex items-center space-x-4 w-full">
                     <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg">
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
                       <p className="text-gray-600 hover:text-red-600 transition-colors">
-                        +266-63651639
+                        +266-56864062/62623825
                       </p>
                     </div>
                   </a>
@@ -234,7 +235,7 @@ export default function ContactPage() {
               <Card className="bg-white border-gray-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg cursor-pointer">
                 <CardContent className="p-6">
                   <a
-                    href="https://www.google.com/maps/search/Transformation+Resource+Center+Maseru+Lesotho"
+                    href="https://www.google.com/maps/search/Hatsolo+By-Pass+Maseru+Lesotho"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 w-full"
@@ -245,7 +246,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900">Location</h3>
                       <p className="text-gray-600 hover:text-teal-600 transition-colors">
-                        Transformation Resource Center
+                        Hatsolo (By-Pass)
                       </p>
                       <p className="text-sm text-gray-500">Maseru, Lesotho</p>
                     </div>
@@ -261,7 +262,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900">Business Hours</h3>
-                      <p className="text-gray-600">Mon - Fri: 8:00 AM - 6:00 PM</p>
+                      <p className="text-gray-600">Mon - Fri: 9:00 AM - 5:00 PM</p>
                     </div>
                   </div>
                 </CardContent>

@@ -18,21 +18,21 @@ export default function AboutPage() {
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                 About{" "}
                 <span className="bg-gradient-to-r from-teal-600 to-coral-500 bg-clip-text text-transparent">
-                  SparkleSmart
+                  JKL Technologies
                 </span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                SparkleSmart Technologies is dedicated to collaborating with inspired partners and clients to deliver
+                JKL Technologies is dedicated to collaborating with inspired partners and clients to deliver
                 user-centric digital solutions that enrich lives, expand opportunities, and empower organizations to
                 drive sustainable development impact.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">5+</div>
+                  <div className="text-3xl font-bold text-gray-900">2+</div>
                   <div className="text-gray-500">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">500+</div>
+                  <div className="text-3xl font-bold text-gray-900">100+</div>
                   <div className="text-gray-500">Projects Completed</div>
                 </div>
               </div>

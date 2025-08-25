@@ -209,7 +209,7 @@ function Header() {
     <header className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
       <nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold text-teal-600">
-          SparkleSmart
+          JKL Technologies
         </Link>
 
         <button className="md:hidden p-2 rounded text-gray-600" onClick={() => setOpen(!open)} aria-label="Toggle menu">
@@ -252,7 +252,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">SparkleSmart Technologies</h3>
+            <h3 className="text-xl font-bold mb-4">JKL Technologies</h3>
             <p className="text-gray-400 text-sm">
               Digital innovation leaders providing comprehensive technology solutions.
             </p>
@@ -302,17 +302,17 @@ function Footer() {
             <div className="space-y-2 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>info@sparklesmartec.com</span>
+                <span>info@jkltechno.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+266-63651639</span>
+                <span>+266-56864062/62623825</span>
               </div>
             </div>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>© {new Date().getFullYear()} SparkleSmart Technologies. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} @2025 JKL Technologies. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -1158,10 +1158,10 @@ export default function CiscoLearningPage() {
               </p>
               <div className="space-y-2 text-sm">
                 <p>
-                  <strong>Email:</strong> info@sparklesmartec.com
+                  <strong>Email:</strong> info@jkltechno.com
                 </p>
                 <p>
-                  <strong>Phone:</strong> +266-63651639
+                  <strong>Phone:</strong> +266-56864062/62623825
                 </p>
                 <p>
                   <strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM

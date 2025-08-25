@@ -9,7 +9,7 @@ import { Linkedin, Twitter, Mail, Shield, Brain, TrendingUp, Code } from "lucide
 export default function TeamPage() {
   const team = [
     {
-      name: "Mukai Turugare",
+      name: "Keketso Justice Lithane",
       role: "Digitalization & Business Development Lead",
       type: "External Advisor",
       image: "/placeholder.svg?height=300&width=300",
@@ -18,16 +18,16 @@ export default function TeamPage() {
       specialty: "Digital Strategy & Partnerships",
     },
      {
-      name: "Bernard Munyaradzi Chadenga",
+      name: "Tello Ananias Letoao",
       role: "Cybersecurity Lead",
       type: "External Advisor",
       image: "/placeholder.svg?height=300&width=300",
-      bio: "Cybersecurity executive with 20+ years of experience advising on secure digital systems, data protection, and risk management across Africa.",
+      bio: "Cybersecurity executive with 2+ years of experience advising on secure digital systems, data protection, and risk management across Africa.",
       icon: <Shield className="w-6 h-6" />,
       specialty: "Cybersecurity & Risk Management",
     },
     {
-      name: "Thamu David Pike Mnyulwa",
+      name: "",
       role: "Machine Learning Engineer, AI & Data Scientist Lead",
       type: "External Advisor",
       image: "/placeholder.svg?height=300&width=300",
@@ -37,7 +37,7 @@ export default function TeamPage() {
     },
    
     {
-      name: "Khabo Morolong",
+      name: "",
       role: "Lead Developer",
       type: "External Advisor",
       image: "/placeholder.svg?height=300&width=300",

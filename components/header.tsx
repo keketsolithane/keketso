@@ -33,11 +33,11 @@ export function Header() {
               className="flex items-center space-x-2 hover:text-teal-200 transition-colors"
             >
               <Mail className="w-4 h-4" />
-              <span>info@sparklesmartec.com</span>
+              <span>info@jkltechno.com</span>
             </a>
             <a href="tel:+26663651639" className="flex items-center space-x-2 hover:text-teal-200 transition-colors">
               <Phone className="w-4 h-4" />
-              <span>+266-63651639</span>
+              <span>+266-56864062/62623825</span>
             </a>
           </div>
           <div className="flex items-center space-x-4">
@@ -57,7 +57,7 @@ export function Header() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-3">
             <Logo className="w-12 h-12 shadow-md" />
-            <span className="text-2xl font-bold text-gray-900">SparkleSmart</span>
+            <span className="text-2xl font-bold text-gray-900">JKL Technologies</span>
           </Link>
 
           {/* Desktop Menu */}

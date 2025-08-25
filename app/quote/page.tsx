@@ -162,10 +162,10 @@ export default function QuotePage() {
                       <label>Budget</label>
                       <select name="budget" value={formData.budget} onChange={handleChange} className="w-full p-3 border rounded-md">
                         <option value="">Select</option>
-                        <option value="5000-10000">$5,000 - $10,000</option>
-                        <option value="10000-25000">$10,000 - $25,000</option>
-                        <option value="25000-50000">$25,000 - $50,000</option>
-                        <option value="50000+">$50,000+</option>
+                        <option value="5000-10000">M2,500 - M5,000</option>
+                        <option value="10000-25000">M5,000 - M10,000</option>
+                        <option value="25000-50000">M10,000 - M15,000</option>
+                        <option value="50000+">M15,000+</option>
                       </select>
                     </div>
                     <div>
@@ -175,7 +175,7 @@ export default function QuotePage() {
                         <option value="1-3months">1-3 months</option>
                         <option value="3-6months">3-6 months</option>
                         <option value="6-12months">6-12 months</option>
-                        <option value="12months+">12+ months</option>
+                        <option value="12months+">1 year +</option>
                       </select>
                     </div>
                   </div>
